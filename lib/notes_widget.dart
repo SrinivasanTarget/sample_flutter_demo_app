@@ -17,9 +17,14 @@ class _Notes extends State<NotesWidget> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(
-              Icons.add,
+            IconButton(
               color: Colors.blueGrey,
+              onPressed: () {
+                final snackBar = SnackBar(content: Text("Tap"));
+
+                Scaffold.of(context).showSnackBar(snackBar);
+              },
+              icon: new Icon(Icons.add),
             ),
             Padding(
                 padding: const EdgeInsets.all(2.0),
