@@ -13,7 +13,10 @@ class Home extends StatelessWidget {
         title: Text('Notes App'),
         backgroundColor: Colors.blueGrey,
       ),
-      body: Center(
+      body: Container(
+        padding: EdgeInsets.all(5.0),
+        margin: EdgeInsets.all(2.0),
+        color: Colors.blueGrey[100],
         child: Text(
           'Capture all your notes here',
           style: TextStyle(
