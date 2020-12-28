@@ -1,50 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-  home: Home(),
-)
-);
+import 'home_widget.dart';
 
-class Home extends StatelessWidget {
+void main() => runApp(App());
+
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Notes App'),
-        backgroundColor: Colors.blueGrey,
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              child: Text(
-                'Capture all your notes here',
-                style: TextStyle(
-                  color: Colors.black87,
-                  fontSize: 35.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'IndieFlower',
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blueGrey,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.blueGrey,
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.add_comment),
-              label: 'Add Comments'
-          ),
-        ],
-      ),
+    return MaterialApp(
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      debugShowCheckedModeBanner: true,
+      home: Home(),
     );
   }
 }
-
