@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sample_flutter_demo_app/profile_widget.dart';
 
 import 'notes_widget.dart';
 
@@ -13,30 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _index = 0;
 
-  final List<Widget> _children = [
-    Center(
-      child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(10),
-              child: Text(
-                'Capture all your notes here...',
-                style: TextStyle(
-                  color: Colors.blueGrey,
-                  fontSize: 35.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'IndieFlower',
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-    NotesWidget()
-  ];
+  final List<Widget> _children = [NotesWidget(), ProfileWidget()];
 
   void onTapped(int index) {
     setState(() {
@@ -57,11 +35,9 @@ class _HomeState extends State<Home> {
         currentIndex: _index,
         backgroundColor: Colors.blueGrey,
         items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
           BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add Notes'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.accessibility_new_rounded), label: 'Profile'),
         ],
       ),
     );
